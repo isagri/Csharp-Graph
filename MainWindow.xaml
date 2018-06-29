@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        xmlns:wpf="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid Margin="0,0,0,-3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="lat" HorizontalAlignment="Left" Height="30" Margin="72,49,0,0" TextWrapping="Wrap" Text="5.709360123" VerticalAlignment="Top" Width="85"/>
+        <TextBox Name="lon" Height="30" Margin="251,47,443,0" TextWrapping="Wrap" Text="45.1764946" VerticalAlignment="Top"/>
+        <TextBox Name="dist" HorizontalAlignment="Left" Height="30" Margin="416,43,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="149"/>
+        <Button Content="Afficher les lignes&#xD;&#xA; de transports" Click ="Button_Click"  HorizontalAlignment="Left" Height="51" Margin="614,39,0,0" VerticalAlignment="Top" Width="142" RenderTransformOrigin="-0.028,0.62"/>
+        <Label Content="Lattitude" HorizontalAlignment="Left" Height="29" Margin="0,43,0,0" VerticalAlignment="Top" Width="67"/>
+        <Label Content="Longitude" HorizontalAlignment="Left" Height="30" Margin="178,42,0,0" VerticalAlignment="Top" Width="67"/>
+        <Label Content="Distance" HorizontalAlignment="Left" Height="33" Margin="349,39,0,0" VerticalAlignment="Top" Width="67"/>
+        <Label Content="Pour rechercher les lignes de transports autour de votre position, veuillez indiquer votre position (lattitude et longitude) et la distance maximale des arrêts de bus &#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Height="33"/>
+        <DataGrid Name="gridtls" HorizontalAlignment="Left" Height="138" Margin="416,114,0,0" VerticalAlignment="Top" Width="355"
+                  SelectionChanged="gridtls_SelectionChanged"/>
+        <DataGrid Name="gridtl" HorizontalAlignment="Left" Height="121" Margin="416,276,0,0" VerticalAlignment="Top" Width="355"/>
+        <Label Content="Arrêts :" HorizontalAlignment="Left" Height="27" Margin="416,87,0,0" VerticalAlignment="Top" Width="173"/>
+        <Label Content="Lignes passant par l'arrêt :&#xD;&#xA;" HorizontalAlignment="Left" Height="27" Margin="416,249,0,0" VerticalAlignment="Top" Width="149"/>
+        <TextBox Name="tlsName" HorizontalAlignment="Left" Height="23" Margin="570,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" RenderTransformOrigin="0.255,0.584"/>
+        <wpf:Map Margin="10,87,395,25" Center ="45.18, 5.72" ZoomLevel ="12"></wpf:Map>
+    </Grid>
+
+</Window>
